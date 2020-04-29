@@ -1,8 +1,8 @@
 {
   "version": "0.5.1",
-  "name": "@bongnv/gridsome-transformer-remark",
+  "name": "@bongnv/transformer-remark",
   "description": "Markdown transformer for Gridsome",
-  "homepage": "https://github.com/gridsome/gridsome/tree/master/packages/transformer-remark#readme",
+  "homepage": "https://github.com/bongnv/gridsome-transformer-remark#readme",
   "repository": {
     "type": "git",
     "url": "https://github.com/bongnv/gridsome-transformer-remark"
