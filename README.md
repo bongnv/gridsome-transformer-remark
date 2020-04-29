@@ -4,8 +4,8 @@
 
 ## Install
 
-- `yarn add @bongnv/gridsome-transformer-remark`
-- `npm install @bongnv/gridsome-transformer-remark`
+- `yarn add @bongnv/transformer-remark`
+- `npm install @bongnv/transformer-remark`
 
 ## Basic usage
 
