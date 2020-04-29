@@ -1,13 +1,14 @@
 {
-  "version": "0.5.0",
-  "name": "@gridsome/transformer-remark",
+  "version": "0.5.1",
+  "name": "@bongnv/gridsome-transformer-remark",
   "description": "Markdown transformer for Gridsome",
   "homepage": "https://github.com/gridsome/gridsome/tree/master/packages/transformer-remark#readme",
-  "repository": "https://github.com/gridsome/gridsome/tree/master/packages/transformer-remark",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bongnv/gridsome-transformer-remark"
+  },
   "main": "index.js",
   "keywords": [
-    "gridsome",
-    "gridsome-plugin",
     "gridsome-transformer",
     "markdown",
     "remark"
@@ -40,5 +41,10 @@
   },
   "engines": {
     "node": ">=8"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bong Nguyen",
+  "license": "MIT"
 }
