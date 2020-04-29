@@ -1,4 +1,4 @@
-# @gridsome/transformer-remark
+# @bongnv/transformer-remark
 
 > Markdown transformer for Gridsome with [Remark](https://remark.js.org/).
 
