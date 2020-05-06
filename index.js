@@ -13,7 +13,6 @@ const {
   createFile,
   findHeadings,
   createPlugins,
-  pruneText,
 } = require('./lib/utils')
 
 const {
@@ -118,18 +117,36 @@ class RemarkTransformer {
           return cached
         }
       },
-      prunedText: {
+      excerpt: {
         type: GraphQLString,
         args: {
-          pruneLength: {
+          length: {
             type: GraphQLInt,
-            defaultValue: 200,
-          },
+            description: 'Maximum length of generated excerpt (characters)',
+            defaultValue: 200
+          }
         },
-        resolve: async (node, { pruneLength }) => {
-          const ast = await this._nodeToAST(node);
-          return pruneText(ast, pruneLength);
-        },
+        resolve: async (node, { length }) => {
+          const key = cacheKey(node, 'excerpt')
+          let excerpt = node.excerpt || cache.get(key)
+
+          if (!excerpt) {
+            const html = await this._nodeToHTML(node)
+            // Remove html tags, then newlines.
+            excerpt = sanitizeHTML(html, {
+              allowedAttributes: {},
+              allowedTags: []
+            }).replace(/\r?\n|\r/g, ' ')
+
+            if (excerpt.length > length && length) {
+              excerpt = excerpt.substr(0, excerpt.lastIndexOf(' ', length - 1)) + '...'
+            }
+
+            cache.set(key, excerpt)
+          }
+
+          return excerpt
+        }
       }
     }
   }
