@@ -1,11 +1,11 @@
-# @gridsome/transformer-remark
+# @bongnv/transformer-remark
 
 > Markdown transformer for Gridsome with [Remark](https://remark.js.org/).
 
 ## Install
 
-- `yarn add @bongnv/gridsome-transformer-remark`
-- `npm install @bongnv/gridsome-transformer-remark`
+- `yarn add @bongnv/transformer-remark`
+- `npm install @bongnv/transformer-remark`
 
 ## Basic usage
 
